@@ -32,8 +32,13 @@
             this.navegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BotonIr = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.addressBar = new System.Windows.Forms.TextBox();
+            this.goButton = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -43,12 +48,15 @@
             this.navegarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1517, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(986, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // navegarToolStripMenuItem
             // 
+            this.navegarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.volverToolStripMenuItem});
             this.navegarToolStripMenuItem.Name = "navegarToolStripMenuItem";
             this.navegarToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.navegarToolStripMenuItem.Text = "Navegar";
@@ -76,20 +84,57 @@
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // webBrowser1
+            // webView
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(12, 73);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1493, 569);
-            this.webBrowser1.TabIndex = 3;
+            this.webView.AllowExternalDrop = true;
+            this.webView.CreationProperties = null;
+            this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView.Location = new System.Drawing.Point(12, 103);
+            this.webView.Name = "webView";
+            this.webView.Size = new System.Drawing.Size(950, 476);
+            this.webView.Source = new System.Uri("https://www.microsoft.com", System.UriKind.Absolute);
+            this.webView.TabIndex = 4;
+            this.webView.ZoomFactor = 1D;
+            // 
+            // addressBar
+            // 
+            this.addressBar.Location = new System.Drawing.Point(13, 74);
+            this.addressBar.Name = "addressBar";
+            this.addressBar.Size = new System.Drawing.Size(866, 22);
+            this.addressBar.TabIndex = 5;
+            // 
+            // goButton
+            // 
+            this.goButton.Location = new System.Drawing.Point(897, 74);
+            this.goButton.Name = "goButton";
+            this.goButton.Size = new System.Drawing.Size(75, 23);
+            this.goButton.TabIndex = 6;
+            this.goButton.Text = "Ir";
+            this.goButton.UseVisualStyleBackColor = true;
+            this.goButton.Click += new System.EventHandler(this.goButton_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem1.Text = "Regresar";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // volverToolStripMenuItem
+            // 
+            this.volverToolStripMenuItem.Name = "volverToolStripMenuItem";
+            this.volverToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.volverToolStripMenuItem.Text = "Volver";
+            this.volverToolStripMenuItem.Click += new System.EventHandler(this.volverToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1517, 664);
-            this.Controls.Add(this.webBrowser1);
+            this.ClientSize = new System.Drawing.Size(986, 664);
+            this.Controls.Add(this.goButton);
+            this.Controls.Add(this.addressBar);
+            this.Controls.Add(this.webView);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.BotonIr);
             this.Controls.Add(this.menuStrip1);
@@ -99,6 +144,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,7 +156,11 @@
         private System.Windows.Forms.ToolStripMenuItem navegarToolStripMenuItem;
         private System.Windows.Forms.Button BotonIr;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView;
+        private System.Windows.Forms.TextBox addressBar;
+        private System.Windows.Forms.Button goButton;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem volverToolStripMenuItem;
     }
 }
 

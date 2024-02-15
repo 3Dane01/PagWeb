@@ -55,6 +55,8 @@ namespace PagWeb
             webView.Size = this.ClientSize - new System.Drawing.Size(webView.Location);
             goButton.Left = this.ClientSize.Width - goButton.Width;
             addressBar.Width = goButton.Left - addressBar.Left;
+            comboBoxHistorial.Width = addressBar.Width;
+            comboBoxHistorial.Left = addressBar.Left;
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

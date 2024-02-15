@@ -4,15 +4,20 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace PagWeb
 {
     public partial class Form1 : Form
     {
+        string nombreArchivo = @"E:\Progra3\Progrmas\PagWeb\bin\Debug\Historial.txt";
         public Form1()
         {
             InitializeComponent();
@@ -51,47 +56,35 @@ namespace PagWeb
             goButton.Left = this.ClientSize.Width - goButton.Width;
             addressBar.Width = goButton.Left - addressBar.Left;
         }
-
-        private void BotonIr_Click(object sender, EventArgs e)
-        {
-            string url = comboBox1.Text.ToString();
-            if (!(url.Contains("http")))
-            {
-                url = "http://" + url;
-            }
-            //webBrowser1.Navigate(new Uri(comboBox1.SelectedItem.ToString())); 
-            //webBrowser1.Navigate(new Uri(url));
-            if ((url.Contains(".")))
-            {
-                url = "http://www.google.com";
-            }
-            //webBrowser1.Navigate(new Uri(url));
-
-        }
-
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void homeToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            //webBrowser1.GoHome();
-        }
 
-        private void goForwardToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void Guardar(string nombreArchivo, string texto)
         {
-            //webBrowser1.GoForward();
+            FileStream stream = new FileStream(nombreArchivo, FileMode.Append, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            writer.WriteLine(texto);
+            writer.Close();
         }
-
-        private void goBackToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void Leer()
         {
-            //webBrowser1.GoBack();
+            string nombreArchivo = @"E:\Progra3\Progrmas\PagWeb\bin\Debug\Archivo.txt";
+            FileStream stream = new FileStream(nombreArchivo, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+            while (reader.Peek() > -1)
+            {
+                string textoLeido = reader.ReadLine();
+                comboBoxHistorial.Items.Add(textoLeido);
+            }
+            reader.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
-            //webBrowser1.GoHome();
+            Leer();
         }
 
         private void goButton_Click(object sender, EventArgs e)
@@ -111,6 +104,8 @@ namespace PagWeb
                     webView.CoreWebView2.Navigate(searchUrl);
                 }
             }
+            Guardar("archivo.txt", url);
+            Leer();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -127,6 +122,11 @@ namespace PagWeb
             {
                 webView.CoreWebView2.GoForward();
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

@@ -33,9 +33,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.volverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.addressBar = new System.Windows.Forms.TextBox();
             this.goButton = new System.Windows.Forms.Button();
-            this.comboBoxHistorial = new System.Windows.Forms.ComboBox();
+            this.addressBar = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +57,7 @@
             this.toolStripMenuItem1,
             this.volverToolStripMenuItem});
             this.navegarToolStripMenuItem.Name = "navegarToolStripMenuItem";
-            this.navegarToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.navegarToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
             this.navegarToolStripMenuItem.Text = "Navegar";
             // 
             // toolStripMenuItem1
@@ -87,16 +86,9 @@
             this.webView.TabIndex = 4;
             this.webView.ZoomFactor = 1D;
             // 
-            // addressBar
-            // 
-            this.addressBar.Location = new System.Drawing.Point(12, 33);
-            this.addressBar.Name = "addressBar";
-            this.addressBar.Size = new System.Drawing.Size(579, 22);
-            this.addressBar.TabIndex = 5;
-            // 
             // goButton
             // 
-            this.goButton.Location = new System.Drawing.Point(597, 31);
+            this.goButton.Location = new System.Drawing.Point(901, 28);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(75, 26);
             this.goButton.TabIndex = 6;
@@ -104,22 +96,21 @@
             this.goButton.UseVisualStyleBackColor = true;
             this.goButton.Click += new System.EventHandler(this.goButton_Click);
             // 
-            // comboBoxHistorial
+            // addressBar
             // 
-            this.comboBoxHistorial.FormattingEnabled = true;
-            this.comboBoxHistorial.Location = new System.Drawing.Point(678, 33);
-            this.comboBoxHistorial.Name = "comboBoxHistorial";
-            this.comboBoxHistorial.Size = new System.Drawing.Size(298, 24);
-            this.comboBoxHistorial.TabIndex = 7;
+            this.addressBar.FormattingEnabled = true;
+            this.addressBar.Location = new System.Drawing.Point(12, 30);
+            this.addressBar.Name = "addressBar";
+            this.addressBar.Size = new System.Drawing.Size(883, 24);
+            this.addressBar.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 664);
-            this.Controls.Add(this.comboBoxHistorial);
-            this.Controls.Add(this.goButton);
             this.Controls.Add(this.addressBar);
+            this.Controls.Add(this.goButton);
             this.Controls.Add(this.webView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -139,11 +130,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem navegarToolStripMenuItem;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView;
-        private System.Windows.Forms.TextBox addressBar;
         private System.Windows.Forms.Button goButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem volverToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBoxHistorial;
+        private System.Windows.Forms.ComboBox addressBar;
     }
 }
 

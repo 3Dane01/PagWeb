@@ -93,10 +93,9 @@ namespace PagWeb
                 //addressBar.Items.Add(url);
             }
             reader.Close();
-            addressBar.DisplayMember = "pagina";
+            addressBar.DisplayMember = "Pagina";
             addressBar.DataSource = historial;
             addressBar.Refresh();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -163,6 +162,30 @@ namespace PagWeb
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string urlActual = addressBar.Text;
+            URL urlAEliminar = historial.Find(u => u.Pagina == urlActual);
+            MessageBox.Show("Se elimino la pagina: " + urlAEliminar);
+            if (urlAEliminar != null)
+            {
+                historial.Remove(urlAEliminar);
+                Guardar(nombreArchivo);  
+                Leer();  
+                
+            }
+            else
+            {
+                MessageBox.Show("La página no existe en el historial");
+            }
+        }
+
+        private void buttonOrdenarAscendente_Click(object sender, EventArgs e)
+        {
+            historial = historial.OrderByDescending(u => u.Veces).ToList();
+            Leer();
         }
     }
 }

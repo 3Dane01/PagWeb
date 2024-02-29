@@ -35,6 +35,9 @@
             this.webView = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.goButton = new System.Windows.Forms.Button();
             this.addressBar = new System.Windows.Forms.ComboBox();
+            this.buttonEliminar = new System.Windows.Forms.Button();
+            this.buttonOrdenarAscendente = new System.Windows.Forms.Button();
+            this.buttonOrdenarFecha = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +49,7 @@
             this.navegarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(991, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1153, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -57,7 +60,7 @@
             this.toolStripMenuItem1,
             this.volverToolStripMenuItem});
             this.navegarToolStripMenuItem.Name = "navegarToolStripMenuItem";
-            this.navegarToolStripMenuItem.Size = new System.Drawing.Size(79, 26);
+            this.navegarToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.navegarToolStripMenuItem.Text = "Navegar";
             // 
             // toolStripMenuItem1
@@ -81,7 +84,7 @@
             this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView.Location = new System.Drawing.Point(12, 62);
             this.webView.Name = "webView";
-            this.webView.Size = new System.Drawing.Size(964, 517);
+            this.webView.Size = new System.Drawing.Size(1122, 517);
             this.webView.Source = new System.Uri("https://www.microsoft.com", System.UriKind.Absolute);
             this.webView.TabIndex = 4;
             this.webView.ZoomFactor = 1D;
@@ -104,11 +107,43 @@
             this.addressBar.Size = new System.Drawing.Size(883, 24);
             this.addressBar.TabIndex = 8;
             // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Location = new System.Drawing.Point(901, 5);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEliminar.TabIndex = 9;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonOrdenarAscendente
+            // 
+            this.buttonOrdenarAscendente.Location = new System.Drawing.Point(982, 28);
+            this.buttonOrdenarAscendente.Name = "buttonOrdenarAscendente";
+            this.buttonOrdenarAscendente.Size = new System.Drawing.Size(152, 23);
+            this.buttonOrdenarAscendente.TabIndex = 10;
+            this.buttonOrdenarAscendente.Text = "Ordenar ascendente";
+            this.buttonOrdenarAscendente.UseVisualStyleBackColor = true;
+            this.buttonOrdenarAscendente.Click += new System.EventHandler(this.buttonOrdenarAscendente_Click);
+            // 
+            // buttonOrdenarFecha
+            // 
+            this.buttonOrdenarFecha.Location = new System.Drawing.Point(982, 5);
+            this.buttonOrdenarFecha.Name = "buttonOrdenarFecha";
+            this.buttonOrdenarFecha.Size = new System.Drawing.Size(152, 23);
+            this.buttonOrdenarFecha.TabIndex = 11;
+            this.buttonOrdenarFecha.Text = "Ordenar por Fecha";
+            this.buttonOrdenarFecha.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 664);
+            this.ClientSize = new System.Drawing.Size(1153, 664);
+            this.Controls.Add(this.buttonOrdenarFecha);
+            this.Controls.Add(this.buttonOrdenarAscendente);
+            this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.addressBar);
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.webView);
@@ -134,6 +169,9 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem volverToolStripMenuItem;
         private System.Windows.Forms.ComboBox addressBar;
+        private System.Windows.Forms.Button buttonEliminar;
+        private System.Windows.Forms.Button buttonOrdenarAscendente;
+        private System.Windows.Forms.Button buttonOrdenarFecha;
     }
 }
 
